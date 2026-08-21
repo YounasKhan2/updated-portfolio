@@ -1,0 +1,353 @@
+@import "tailwindcss";
+
+:root {
+  /* Dark Theme Palette (Default) */
+  --ink: #0a0a0f;
+  --panel: #101018;
+  --surface: #16161f;
+  --line: #262633;
+  --accent: #c9f542;
+  --accent-dim: #9fbf2e;
+  --fog: #8f8fa3;
+  --mist: #c9c9d6;
+  --text-white: #ffffff;
+  --grid-line: rgba(255, 255, 255, 0.035);
+  --outline-stroke: rgba(237, 237, 242, 0.16);
+  --outline-hover: rgba(201, 245, 66, 0.65);
+}
+
+.light {
+  /* Warm Brown Cream & Latte Palette */
+  --ink: #EAE2D5;
+  /* Rich warm brown-cream / toasted almond canvas */
+  --panel: #FFFFFF;
+  /* Crisp clean elevated cards */
+  --surface: #DDD3C1;
+  /* Warm toasted cream badge and surface tint */
+  --line: #CFC3AE;
+  /* Warm refined border lines */
+  --accent: #16a34a;
+  /* Crisp vibrant emerald green */
+  --accent-dim: #15803d;
+  --fog: #5C5346;
+  /* Deep warm espresso readable secondary text */
+  --mist: #2E2820;
+  /* Deep coffee tag and text */
+  --text-white: #1A1612;
+  /* Deep high-contrast typography for primary headers */
+  --grid-line: rgba(26, 22, 18, 0.05);
+  --outline-stroke: rgba(26, 22, 18, 0.16);
+  --outline-hover: rgba(22, 163, 74, 0.7);
+}
+
+@theme {
+  --color-ink: var(--ink);
+  --color-panel: var(--panel);
+  --color-surface: var(--surface);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-accent-dim: var(--accent-dim);
+  --color-fog: var(--fog);
+  --color-mist: var(--mist);
+  --color-white: var(--text-white);
+  --font-display: "Syne", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body {
+  background-color: var(--color-ink);
+  color: var(--color-white);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: var(--color-ink);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-ink);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-line);
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-fog);
+}
+
+.bg-grid {
+  background-image:
+    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+.text-outline {
+  -webkit-text-stroke: 1px var(--outline-stroke);
+  color: transparent;
+}
+
+.text-outline-hover {
+  -webkit-text-stroke: 1.5px var(--outline-hover);
+  color: transparent;
+  transition: color 0.45s ease, -webkit-text-stroke 0.45s ease;
+}
+
+.text-outline-hover:hover {
+  color: var(--color-accent);
+}
+
+.glow-ring {
+  box-shadow:
+    0 0 0 1px rgba(201, 245, 66, 0.25),
+    0 0 60px rgba(201, 245, 66, 0.08);
+}
+
+.holo-sheen::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(115deg,
+      transparent 30%,
+      rgba(201, 245, 66, 0.09) 45%,
+      rgba(140, 200, 255, 0.07) 52%,
+      transparent 68%);
+  background-size: 250% 250%;
+  background-position: 0% 0%;
+  transition: background-position 0.9s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.holo-sheen:hover::before {
+  background-position: 100% 100%;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+@keyframes blink {
+
+  0%,
+  49% {
+    opacity: 1;
+  }
+
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.animate-blink {
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes spin-slow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 16s linear infinite;
+}
+
+@keyframes float-slow {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+.animate-float-slow {
+  animation: float-slow 7s ease-in-out infinite;
+}
+
+@keyframes scroll-dot {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  70% {
+    transform: translateY(12px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+}
+
+.animate-scroll-dot {
+  animation: scroll-dot 1.8s ease-in-out infinite;
+}
+
+/* ==========================================================================
+   Light Theme Special Accents: Green Marquee & Green Experience Section
+   ========================================================================== */
+
+/* Light Theme: Vibrant Emerald Green Marquee */
+.light #marquee .marquee-banner {
+  background-color: #15803d !important;
+  border-color: #166534 !important;
+  box-shadow: 0 10px 40px rgba(21, 128, 61, 0.25) !important;
+}
+
+.light #marquee .marquee-item {
+  color: #f0fdf4 !important;
+}
+
+.light #marquee .marquee-star {
+  color: #86efac !important;
+}
+
+/* Light Theme: Deep Forest Emerald Experience Section */
+.light #experience {
+  background-color: #0b3d22 !important;
+  border-color: #14532d !important;
+  color: #ffffff !important;
+}
+
+.light #experience h2 {
+  color: #ffffff !important;
+}
+
+.light #experience [class*="text-accent"],
+.light #experience .font-mono.text-accent,
+.light #experience span.text-accent {
+  color: #86efac !important;
+}
+
+.light #experience span.h-px.bg-accent\/50 {
+  background-color: rgba(134, 239, 172, 0.4) !important;
+}
+
+.light #experience [class*="text-fog"],
+.light #experience span.text-fog {
+  color: #bbf7d0 !important;
+}
+
+.light #experience .experience-timeline {
+  border-color: rgba(134, 239, 172, 0.25) !important;
+}
+
+.light #experience .experience-dot {
+  border-color: #86efac !important;
+  background-color: #0b3d22 !important;
+}
+
+.light #experience .experience-dot-inner {
+  background-color: #4ade80 !important;
+}
+
+.light #experience .experience-badge {
+  background-color: rgba(22, 101, 52, 0.8) !important;
+  color: #86efac !important;
+  border: 1px solid rgba(134, 239, 172, 0.3) !important;
+}
+
+.light #experience .experience-location {
+  color: #a7f3d0 !important;
+}
+
+.light #experience .experience-role {
+  color: #ffffff !important;
+}
+
+.light #experience .experience-company {
+  color: #86efac !important;
+}
+
+.light #experience .experience-desc {
+  color: #d1fae5 !important;
+}
+
+.light #experience .experience-highlight {
+  color: #ecfdf5 !important;
+}
+
+.light #experience .experience-bullet {
+  color: #86efac !important;
+}
+
+/* ==========================================================================
+   Side Rails Styling
+   ========================================================================== */
+
+/* Dark mode (default) */
+.side-rail-link {
+  color: var(--color-fog);
+}
+
+.side-rail-link:hover {
+  color: var(--color-accent);
+}
+
+.side-rail-line {
+  background-color: var(--color-line);
+}
+
+/* Light mode (default across all creamy sections: Hero, About, Skills, Projects, Contact, Footer) -> ALWAYS VIBRANT GREEN */
+.light .side-rail-link {
+  color: #15803d !important;
+}
+
+.light .side-rail-link:hover {
+  color: #0f3d24 !important;
+}
+
+.light .side-rail-line {
+  background-color: #15803d !important;
+  opacity: 0.6;
+}
+
+/* Light mode (ONLY when scrolling over the green experience section) -> PURE CRISP WHITE */
+.light .side-rails-green-mode .side-rail-link {
+  color: #ffffff !important;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.4));
+}
+
+.light .side-rails-green-mode .side-rail-link:hover {
+  color: #86efac !important;
+}
+
+.light .side-rails-green-mode .side-rail-line {
+  background-color: #ffffff !important;
+  opacity: 0.8;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+}
