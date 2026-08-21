@@ -8,19 +8,20 @@ import type { Skill } from '../lib/types';
 
 const CATEGORIES = [
   { key: 'Frontend', icon: Monitor, blurb: 'interfaces that feel alive' },
-  { key: 'Backend', icon: Server, blurb: 'apis, auth & databases' },
-  { key: 'Mobile', icon: Smartphone, blurb: 'one codebase, every screen' },
-  { key: 'Tools & DevOps', icon: Wrench, blurb: 'ship fast, ship safe' },
+  { key: 'Backend', icon: Server, blurb: 'apis, auth, logic & databases' },
+  { key: 'Mobile', icon: Smartphone, blurb: 'cross-platform & desktop apps' },
+  { key: 'Tools & DevOps', icon: Wrench, blurb: 'cloud, containerization & delivery' },
 ];
 
 interface LogoConfig {
-  slug: string;
+  slug?: string;
+  url?: string;
   color?: string;
   light?: string;
   dark?: string;
 }
 
-// Simple Icons (cdn.simpleicons.org) slugs + adaptive brand colors per skill
+// Simple Icons & Devicons slugs + adaptive brand colors per skill
 const LOGOS: Record<string, LogoConfig> = {
   // Frontend
   React: { slug: 'react', color: '61DAFB' },
@@ -30,23 +31,31 @@ const LOGOS: Record<string, LogoConfig> = {
   JavaScript: { slug: 'javascript', color: 'F7DF1E' },
   'Redux / Zustand': { slug: 'redux', color: '764ABC' },
 
-  // Backend
+  // Backend & Core Languages
   'Node.js': { slug: 'nodedotjs', color: '5FA04E' },
   'Express.js': { slug: 'express', light: '000000', dark: 'FFFFFF' },
+  Laravel: { slug: 'laravel', color: 'FF2D20' },
+  'C++': { slug: 'cplusplus', color: '00599C' },
+  Java: { url: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg' },
   'PostgreSQL / Supabase': { slug: 'supabase', color: '3FCF8E' },
   MongoDB: { slug: 'mongodb', color: '47A248' },
   'Prisma ORM': { slug: 'prisma', light: '2D3748', dark: 'FFFFFF' },
   'REST & GraphQL APIs': { slug: 'graphql', color: 'E10098' },
 
-  // Mobile
+  // Mobile & Desktop
   Flutter: { slug: 'flutter', color: '02569B' },
   Dart: { slug: 'dart', color: '0175C2' },
+  'Java Swing': { url: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg' },
   Firebase: { slug: 'firebase', color: 'FFCA28' },
   'Android Studio': { slug: 'androidstudio', color: '3DDC84' },
 
-  // Tools & DevOps
-  'Git & GitHub': { slug: 'github', light: '181717', dark: 'FFFFFF' },
+  // Cloud, Tools & DevOps
+  AWS: { url: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg' },
+  Azure: { url: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/azure/azure-original.svg' },
+  Kubernetes: { slug: 'kubernetes', color: '326CE5' },
   Docker: { slug: 'docker', color: '2496ED' },
+  'Git & GitHub': { slug: 'github', light: '181717', dark: 'FFFFFF' },
+  'Google Tag Manager': { slug: 'googletagmanager', color: '246FDB' },
   'CI/CD & Vercel': { slug: 'vercel', light: '000000', dark: 'FFFFFF' },
   Postman: { slug: 'postman', color: 'FF6C37' },
   Figma: { slug: 'figma', color: 'F24E1E' },
@@ -75,21 +84,25 @@ function SkillTile({ skill, index, isDark }: { skill: Skill; index: number; isDa
       : logo.light || logo.color || '000000'
     : 'FFFFFF';
 
+  const imgSrc = logo?.url || (logo?.slug ? `https://cdn.simpleicons.org/${logo.slug}/${iconColor}` : '');
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 18 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-20px' }}
-      transition={{ duration: 0.4, delay: index * 0.05, ease: 'easeOut' }}
+      transition={{ duration: 0.4, delay: index * 0.04, ease: 'easeOut' }}
       className="group flex items-center gap-3.5 rounded-xl border border-line bg-panel px-4 py-3.5 transition-all duration-300 hover:-translate-y-1 hover:border-accent/60 hover:shadow-[0_10px_30px_rgba(201,245,66,0.08)]"
     >
-      {showLogo ? (
+      {showLogo && imgSrc ? (
         <img
-          src={`https://cdn.simpleicons.org/${logo.slug}/${iconColor}`}
+          src={imgSrc}
           alt={`${skill.name} logo`}
           loading="lazy"
           onError={() => setFailed(true)}
-          className="h-7 w-7 shrink-0 transition-transform duration-300 group-hover:scale-110"
+          className={`h-7 w-7 shrink-0 transition-transform duration-300 group-hover:scale-110 ${
+            logo?.url && skill.name === 'AWS' && isDark ? 'brightness-0 invert' : ''
+          }`}
         />
       ) : (
         <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg border border-line bg-surface font-display text-xs font-bold text-accent">

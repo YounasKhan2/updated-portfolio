@@ -218,8 +218,56 @@ body {
 }
 
 /* ==========================================================================
-   Light Theme Special Accents: Green Marquee & Green Experience Section
+   Theme Special Accents: Green Marquee & Green Experience Section
    ========================================================================== */
+
+/* Dark Theme: Matching Signature Neon Lime-Green Marquee */
+#marquee .marquee-banner {
+  background-color: #121d0a !important;
+  border-color: #284414 !important;
+  box-shadow: 0 10px 40px rgba(201, 245, 66, 0.18) !important;
+}
+
+#marquee .marquee-item {
+  color: #c9f542 !important;
+}
+
+#marquee .marquee-star {
+  color: #ffffff !important;
+}
+
+/* Dark Theme: Matching Green Experience Section */
+#experience {
+  background-color: #121d0a !important;
+  border-color: #284414 !important;
+}
+
+#experience .experience-timeline {
+  border-color: #284414 !important;
+}
+
+#experience .experience-dot {
+  border-color: #c9f542 !important;
+  background-color: #121d0a !important;
+}
+
+#experience .experience-dot-inner {
+  background-color: #c9f542 !important;
+}
+
+#experience .experience-badge {
+  background-color: rgba(201, 245, 66, 0.1) !important;
+  color: #c9f542 !important;
+  border: 1px solid rgba(201, 245, 66, 0.25) !important;
+}
+
+#experience .experience-company {
+  color: #c9f542 !important;
+}
+
+#experience .experience-bullet {
+  color: #c9f542 !important;
+}
 
 /* Light Theme: Vibrant Emerald Green Marquee */
 .light #marquee .marquee-banner {

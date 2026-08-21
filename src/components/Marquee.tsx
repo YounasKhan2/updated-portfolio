@@ -1,20 +1,9 @@
-const ITEMS = [
-  'React',
-  'Node.js',
-  'TypeScript',
-  'Flutter',
-  'Next.js',
-  'PostgreSQL',
-  'Supabase',
-  'Tailwind CSS',
-  'Express',
-  'Firebase',
-  'Docker',
-  'MongoDB',
-];
+import { SKILLS } from '../data/portfolioData';
 
 export default function Marquee() {
-  const row = [...ITEMS, ...ITEMS];
+  const items = SKILLS.map((s) => s.name);
+  const row = [...items, ...items];
+
   return (
     <div id="marquee" className="relative z-20 -my-5 overflow-hidden py-6">
       <div className="marquee-banner -rotate-1 border-y border-line bg-panel py-4 shadow-[0_10px_40px_rgba(0,0,0,0.4)] transition-colors duration-300">

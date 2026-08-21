@@ -19,24 +19,32 @@ export const SKILLS: Skill[] = [
   // Backend
   { id: 7, name: 'Node.js', category: 'Backend', level: 90, sort_order: 7 },
   { id: 8, name: 'Express.js', category: 'Backend', level: 90, sort_order: 8 },
-  { id: 9, name: 'PostgreSQL / Supabase', category: 'Backend', level: 88, sort_order: 9 },
-  { id: 10, name: 'MongoDB', category: 'Backend', level: 85, sort_order: 10 },
-  { id: 11, name: 'Prisma ORM', category: 'Backend', level: 86, sort_order: 11 },
-  { id: 12, name: 'REST & GraphQL APIs', category: 'Backend', level: 92, sort_order: 12 },
+  { id: 9, name: 'Laravel', category: 'Backend', level: 86, sort_order: 9 },
+  { id: 10, name: 'C++', category: 'Backend', level: 85, sort_order: 10 },
+  { id: 11, name: 'Java', category: 'Backend', level: 88, sort_order: 11 },
+  { id: 12, name: 'PostgreSQL / Supabase', category: 'Backend', level: 88, sort_order: 12 },
+  { id: 13, name: 'MongoDB', category: 'Backend', level: 85, sort_order: 13 },
+  { id: 14, name: 'Prisma ORM', category: 'Backend', level: 86, sort_order: 14 },
+  { id: 15, name: 'REST & GraphQL APIs', category: 'Backend', level: 92, sort_order: 15 },
 
   // Mobile
-  { id: 13, name: 'Flutter', category: 'Mobile', level: 92, sort_order: 13 },
-  { id: 14, name: 'Dart', category: 'Mobile', level: 90, sort_order: 14 },
-  { id: 15, name: 'Firebase', category: 'Mobile', level: 88, sort_order: 15 },
-  { id: 16, name: 'Android Studio', category: 'Mobile', level: 85, sort_order: 16 },
+  { id: 16, name: 'Flutter', category: 'Mobile', level: 92, sort_order: 16 },
+  { id: 17, name: 'Dart', category: 'Mobile', level: 90, sort_order: 17 },
+  { id: 18, name: 'Java Swing', category: 'Mobile', level: 82, sort_order: 18 },
+  { id: 19, name: 'Firebase', category: 'Mobile', level: 88, sort_order: 19 },
+  { id: 20, name: 'Android Studio', category: 'Mobile', level: 85, sort_order: 20 },
 
   // Tools & DevOps
-  { id: 17, name: 'Git & GitHub', category: 'Tools & DevOps', level: 94, sort_order: 17 },
-  { id: 18, name: 'Docker', category: 'Tools & DevOps', level: 82, sort_order: 18 },
-  { id: 19, name: 'CI/CD & Vercel', category: 'Tools & DevOps', level: 90, sort_order: 19 },
-  { id: 20, name: 'Postman', category: 'Tools & DevOps', level: 92, sort_order: 20 },
-  { id: 21, name: 'Figma', category: 'Tools & DevOps', level: 85, sort_order: 21 },
-  { id: 22, name: 'Linux / Bash', category: 'Tools & DevOps', level: 84, sort_order: 22 },
+  { id: 21, name: 'AWS', category: 'Tools & DevOps', level: 85, sort_order: 21 },
+  { id: 22, name: 'Azure', category: 'Tools & DevOps', level: 82, sort_order: 22 },
+  { id: 23, name: 'Kubernetes', category: 'Tools & DevOps', level: 80, sort_order: 23 },
+  { id: 24, name: 'Docker', category: 'Tools & DevOps', level: 85, sort_order: 24 },
+  { id: 25, name: 'Git & GitHub', category: 'Tools & DevOps', level: 94, sort_order: 25 },
+  { id: 26, name: 'Google Tag Manager', category: 'Tools & DevOps', level: 88, sort_order: 26 },
+  { id: 27, name: 'CI/CD & Vercel', category: 'Tools & DevOps', level: 90, sort_order: 27 },
+  { id: 28, name: 'Postman', category: 'Tools & DevOps', level: 92, sort_order: 28 },
+  { id: 29, name: 'Figma', category: 'Tools & DevOps', level: 85, sort_order: 29 },
+  { id: 30, name: 'Linux / Bash', category: 'Tools & DevOps', level: 84, sort_order: 30 },
 ];
 
 export const PROJECTS: Project[] = [

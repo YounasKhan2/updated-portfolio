@@ -1,19 +1,12 @@
-import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowUpRight, Github } from 'lucide-react';
 import SectionHeading from './SectionHeading';
 import { PROJECTS } from '../data/portfolioData';
-import type { Project } from '../lib/types';
-
-const FILTERS = ['All', 'Full Stack', 'Flutter'];
 
 export default function Projects() {
-  const [filter, setFilter] = useState('All');
   const projects = PROJECTS;
-
-  const matches = (p: Project) => filter === 'All' || p.category === filter;
-  const featured = projects.filter((p) => p.featured && matches(p));
-  const others = projects.filter((p) => !p.featured && matches(p));
+  const featured = projects.filter((p) => p.featured);
+  const others = projects.filter((p) => !p.featured);
 
   return (
     <section id="projects" className="relative overflow-hidden py-28">
@@ -22,24 +15,7 @@ export default function Projects() {
       </span>
 
       <div className="relative mx-auto max-w-7xl px-6">
-        <div className="flex flex-wrap items-end justify-between gap-6">
-          <SectionHeading index="03" title="Selected work" sub="things I've shipped" />
-          <div className="mb-14 flex flex-wrap gap-2">
-            {FILTERS.map((f) => (
-              <button
-                key={f}
-                onClick={() => setFilter(f)}
-                className={`rounded-full border px-5 py-2 font-mono text-xs uppercase tracking-widest transition ${
-                  filter === f
-                    ? 'border-accent bg-accent text-ink'
-                    : 'border-line text-fog hover:border-accent/60 hover:text-white'
-                }`}
-              >
-                {f}
-              </button>
-            ))}
-          </div>
-        </div>
+        <SectionHeading index="03" title="Selected work" sub="things I've shipped" />
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {featured.map((p, i) => (
@@ -104,12 +80,6 @@ export default function Projects() {
             </motion.article>
           ))}
         </div>
-
-        {featured.length === 0 && others.length === 0 && (
-          <p className="py-16 text-center font-mono text-sm text-fog">
-            // no projects in this category yet
-          </p>
-        )}
 
         {others.length > 0 && (
           <div className="mt-16">
