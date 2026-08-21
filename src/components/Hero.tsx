@@ -200,7 +200,7 @@ export default function Hero() {
             </a>
             <button
               onClick={copyEmail}
-              aria-label="Copy email address"
+              aria-label="Send email to younaskk120@gmail.com"
               className="inline-flex items-center gap-2 rounded-full border border-line px-5 py-4 font-mono text-xs text-fog transition hover:border-accent hover:text-accent"
             >
               {copied ? (

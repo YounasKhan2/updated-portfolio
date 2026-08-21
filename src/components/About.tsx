@@ -70,11 +70,19 @@ export default function About() {
             className="relative mx-auto w-full max-w-md lg:mx-0"
           >
             <div className="absolute -inset-0 translate-x-4 translate-y-4 rounded-2xl border border-accent/40" />
-            <img
-              src="/images/portrait.png"
-              alt="Muhammad Younas — Full Stack Developer"
-              className="relative w-full rounded-2xl border border-line object-cover"
-            />
+            <picture>
+              <source srcSet="/images/portrait.webp" type="image/webp" />
+              <img
+                src="/images/portrait.png"
+                alt="Muhammad Younas — Full Stack Developer"
+                width={448}
+                height={600}
+                loading="lazy"
+                decoding="async"
+                className="relative w-full rounded-2xl border border-line object-cover shadow-2xl"
+                style={{ aspectRatio: '448 / 600' }}
+              />
+            </picture>
             <div className="absolute bottom-4 left-4 rounded-lg border border-line bg-ink/85 px-4 py-2 font-mono text-xs text-accent backdrop-blur">
               📍 Pakistan — working worldwide
             </div>

@@ -10,7 +10,7 @@ export default function ExperienceSection() {
       <div className="mx-auto max-w-7xl px-6">
         <SectionHeading index="04" title="Experience" sub="where I've made an impact" />
 
-        <div className="experience-timeline relative ml-3 space-y-16 border-l border-line pl-10">
+        <div className="experience-timeline relative ml-2 sm:ml-3 space-y-12 sm:space-y-16 border-l border-line pl-6 sm:pl-10">
           {experiences.map((e, i) => (
             <motion.div
               key={e.id}
@@ -20,7 +20,7 @@ export default function ExperienceSection() {
               transition={{ duration: 0.55, delay: i * 0.08, ease: 'easeOut' }}
               className="experience-card relative"
             >
-              <span className="experience-dot absolute -left-[49px] top-1.5 flex h-4 w-4 items-center justify-center rounded-full border-2 border-accent bg-ink">
+              <span className="experience-dot absolute -left-[33px] sm:-left-[49px] top-1.5 flex h-4 w-4 items-center justify-center rounded-full border-2 border-accent bg-ink">
                 <span className="experience-dot-inner h-1.5 w-1.5 rounded-full bg-accent" />
               </span>
 
