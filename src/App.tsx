@@ -10,6 +10,8 @@ import Footer from './components/Footer';
 import SideRails from './components/SideRails';
 import { CursorGlow, ScrollProgress } from './components/Effects';
 import { ThemeProvider } from './context/ThemeContext';
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 
 export default function App() {
   return (
@@ -29,6 +31,8 @@ export default function App() {
           <Contact />
         </main>
         <Footer />
+        <Analytics />
+        <SpeedInsights />
       </div>
     </ThemeProvider>
   );
