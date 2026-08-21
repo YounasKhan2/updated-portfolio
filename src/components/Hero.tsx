@@ -157,43 +157,43 @@ export default function Hero() {
 
           <motion.h1
             variants={item}
-            className="font-display font-extrabold leading-[0.93] tracking-tight"
+            className="font-display font-extrabold leading-[0.93] tracking-tight max-w-full"
           >
-            <span className="block text-[clamp(3rem,11vw,8.2rem)] text-white">
+            <span className="block text-[clamp(2.4rem,9.5vw,8.2rem)] text-white">
               MUHAMMAD
             </span>
-            <span className="text-outline-hover block text-[clamp(3rem,11vw,8.2rem)]">
+            <span className="text-outline-hover block text-[clamp(2.4rem,9.5vw,8.2rem)]">
               YOUNAS
             </span>
           </motion.h1>
 
           <motion.p
             variants={item}
-            className="mt-7 font-display text-2xl font-semibold text-white sm:text-3xl"
+            className="mt-6 sm:mt-7 font-display text-xl font-semibold text-white sm:text-2xl md:text-3xl"
           >
             I craft <CyclingRole />
           </motion.p>
 
           <motion.p
             variants={item}
-            className="mt-6 max-w-2xl text-base leading-relaxed text-fog sm:text-lg"
+            className="mt-5 sm:mt-6 max-w-2xl text-sm leading-relaxed text-fog sm:text-base md:text-lg px-2"
           >
             Full stack developer with <span className="text-white">2 years</span> of experience
             shipping web products on React & Node — plus <span className="text-white">1 year</span>{' '}
             building cross-platform apps with Flutter. From database schema to the final pixel.
           </motion.p>
 
-          <motion.div variants={item} className="mt-10 flex flex-wrap items-center justify-center gap-4">
+          <motion.div variants={item} className="mt-8 sm:mt-10 flex flex-wrap items-center justify-center gap-3 sm:gap-4 w-full max-w-xl mx-auto px-2">
             <a
               href="#projects"
-              className="group inline-flex items-center gap-2 rounded-full bg-accent px-8 py-4 font-display text-sm font-bold uppercase tracking-wider text-ink transition hover:shadow-[0_0_40px_rgba(201,245,66,0.35)]"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-accent px-7 py-3.5 font-display text-sm font-bold uppercase tracking-wider text-ink transition hover:shadow-[0_0_40px_rgba(201,245,66,0.35)]"
             >
               View my work
               <ArrowDown className="h-4 w-4 transition group-hover:translate-y-0.5" />
             </a>
             <a
               href="#contact"
-              className="group inline-flex items-center gap-2 rounded-full border border-line px-8 py-4 font-display text-sm font-bold uppercase tracking-wider text-white transition hover:border-accent hover:text-accent"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full border border-line px-7 py-3.5 font-display text-sm font-bold uppercase tracking-wider text-white transition hover:border-accent hover:text-accent"
             >
               Let's talk
               <ArrowUpRight className="h-4 w-4 transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
@@ -201,31 +201,31 @@ export default function Hero() {
             <button
               onClick={copyEmail}
               aria-label="Send email to younaskk120@gmail.com"
-              className="inline-flex items-center gap-2 rounded-full border border-line px-5 py-4 font-mono text-xs text-fog transition hover:border-accent hover:text-accent"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full border border-line px-5 py-3.5 font-mono text-xs text-fog transition hover:border-accent hover:text-accent truncate max-w-full"
             >
               {copied ? (
-                <Check className="h-3.5 w-3.5 text-accent" />
+                <Check className="h-3.5 w-3.5 text-accent shrink-0" />
               ) : (
-                <Copy className="h-3.5 w-3.5" />
+                <Copy className="h-3.5 w-3.5 shrink-0" />
               )}
-              {copied ? 'copied!' : 'younaskk120@gmail.com'}
+              <span className="truncate">{copied ? 'copied!' : 'younaskk120@gmail.com'}</span>
             </button>
           </motion.div>
 
           <motion.div
             variants={item}
-            className="mt-10 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 font-mono text-xs text-fog"
+            className="mt-8 sm:mt-10 flex flex-wrap items-center justify-center gap-x-4 gap-y-2.5 font-mono text-[11px] sm:text-xs text-fog max-w-full px-2"
           >
             <span>
               <span className="text-accent">2 yrs</span> full stack
             </span>
-            <span className="h-3 w-px bg-line" aria-hidden />
+            <span className="hidden sm:inline h-3 w-px bg-line" aria-hidden />
             <span>
               <span className="text-accent">1 yr</span> flutter
             </span>
-            <span className="h-3 w-px bg-line" aria-hidden />
+            <span className="hidden sm:inline h-3 w-px bg-line" aria-hidden />
             <span>web + mobile · end to end</span>
-            <span className="h-3 w-px bg-line" aria-hidden />
+            <span className="hidden sm:inline h-3 w-px bg-line" aria-hidden />
             <span>📍 pakistan · remote worldwide</span>
           </motion.div>
         </motion.div>

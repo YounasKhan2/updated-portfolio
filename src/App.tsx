@@ -16,12 +16,12 @@ import { SpeedInsights } from '@vercel/speed-insights/react';
 export default function App() {
   return (
     <ThemeProvider>
-      <div id="top" className="relative min-h-screen bg-ink text-white antialiased transition-colors duration-300">
+      <div id="top" className="relative min-h-screen w-full max-w-full overflow-x-hidden bg-ink text-white antialiased transition-colors duration-300">
         <ScrollProgress />
         <CursorGlow />
         <SideRails />
         <Navbar />
-        <main className="relative z-10">
+        <main className="relative z-10 w-full max-w-full overflow-x-hidden">
           <Hero />
           <Marquee />
           <About />

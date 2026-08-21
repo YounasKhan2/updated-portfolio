@@ -123,21 +123,21 @@ export default function Projects() {
                   href={p.github_url || p.demo_url || '#contact'}
                   target="_blank"
                   rel="noreferrer"
-                  className="group grid grid-cols-[auto_1fr_auto] items-center gap-4 border-b border-line py-5 transition hover:bg-panel/60 sm:gap-6"
+                  className="group grid grid-cols-[auto_1fr_auto] items-center gap-3 sm:gap-6 border-b border-line py-4 sm:py-5 transition hover:bg-panel/60"
                 >
-                  <span className="font-mono text-xs text-fog">/0{i + featured.length + 1}</span>
-                  <div className="min-w-0">
-                    <span className="font-display text-lg font-bold text-white transition group-hover:text-accent">
+                  <span className="font-mono text-xs text-fog shrink-0">/0{i + featured.length + 1}</span>
+                  <div className="min-w-0 truncate">
+                    <span className="font-display text-base sm:text-lg font-bold text-white transition group-hover:text-accent truncate">
                       {p.title}
                     </span>
-                    <span className="ml-4 hidden font-mono text-xs text-fog md:inline">
+                    <span className="ml-3 hidden font-mono text-xs text-fog lg:inline">
                       {p.tech.slice(0, 3).join(' · ')}
                     </span>
-                    <span className="ml-4 hidden rounded-full border border-line px-2 py-0.5 font-mono text-[10px] uppercase text-fog sm:inline">
+                    <span className="ml-3 hidden rounded-full border border-line px-2 py-0.5 font-mono text-[10px] uppercase text-fog md:inline">
                       {p.category}
                     </span>
                   </div>
-                  <ArrowUpRight className="h-5 w-5 text-fog transition group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-accent" />
+                  <ArrowUpRight className="h-5 w-5 text-fog transition group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-accent shrink-0" />
                 </a>
               ))}
             </div>
