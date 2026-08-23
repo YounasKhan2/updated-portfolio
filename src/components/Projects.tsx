@@ -17,7 +17,7 @@ export default function Projects() {
       <div className="relative mx-auto max-w-7xl px-6">
         <SectionHeading index="03" title="Selected work" sub="things I've shipped" />
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-2">
           {featured.map((p, i) => (
             <motion.article
               key={p.id}
@@ -55,28 +55,30 @@ export default function Projects() {
                 ))}
               </div>
 
-              <div className="mt-auto flex items-center gap-5 pt-6">
-                {p.demo_url && (
-                  <a
-                    href={p.demo_url}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center gap-1.5 font-mono text-xs text-white transition hover:text-accent"
-                  >
-                    Live demo <ArrowUpRight className="h-3.5 w-3.5" />
-                  </a>
-                )}
-                {p.github_url && (
-                  <a
-                    href={p.github_url}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center gap-1.5 font-mono text-xs text-fog transition hover:text-accent"
-                  >
-                    <Github className="h-4 w-4" /> Code
-                  </a>
-                )}
-              </div>
+              {(p.demo_url || p.github_url) && (
+                <div className="mt-auto flex items-center gap-5 pt-6">
+                  {p.demo_url && (
+                    <a
+                      href={p.demo_url}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-1.5 font-mono text-xs text-white transition hover:text-accent"
+                    >
+                      Live demo <ArrowUpRight className="h-3.5 w-3.5" />
+                    </a>
+                  )}
+                  {p.github_url && (
+                    <a
+                      href={p.github_url}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-1.5 font-mono text-xs text-fog transition hover:text-accent"
+                    >
+                      <Github className="h-4 w-4" /> Code
+                    </a>
+                  )}
+                </div>
+              )}
             </motion.article>
           ))}
         </div>

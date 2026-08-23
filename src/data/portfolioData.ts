@@ -26,31 +26,49 @@ export const SKILLS: Skill[] = [
   { id: 13, name: 'MongoDB', category: 'Backend', level: 85, sort_order: 13 },
   { id: 14, name: 'Prisma ORM', category: 'Backend', level: 86, sort_order: 14 },
   { id: 15, name: 'REST & GraphQL APIs', category: 'Backend', level: 92, sort_order: 15 },
+  { id: 31, name: 'DAST & Web Security', category: 'Backend', level: 90, sort_order: 16 },
+  { id: 32, name: 'Cryptography & Hashing', category: 'Backend', level: 88, sort_order: 17 },
 
   // Mobile
-  { id: 16, name: 'Flutter', category: 'Mobile', level: 92, sort_order: 16 },
-  { id: 17, name: 'Dart', category: 'Mobile', level: 90, sort_order: 17 },
-  { id: 18, name: 'Java Swing', category: 'Mobile', level: 82, sort_order: 18 },
-  { id: 19, name: 'Firebase', category: 'Mobile', level: 88, sort_order: 19 },
-  { id: 20, name: 'Android Studio', category: 'Mobile', level: 85, sort_order: 20 },
+  { id: 16, name: 'Flutter', category: 'Mobile', level: 92, sort_order: 18 },
+  { id: 17, name: 'Dart', category: 'Mobile', level: 90, sort_order: 19 },
+  { id: 18, name: 'Java Swing', category: 'Mobile', level: 82, sort_order: 20 },
+  { id: 19, name: 'Firebase', category: 'Mobile', level: 88, sort_order: 21 },
+  { id: 20, name: 'Android Studio', category: 'Mobile', level: 85, sort_order: 22 },
 
   // Tools & DevOps
-  { id: 21, name: 'AWS', category: 'Tools & DevOps', level: 85, sort_order: 21 },
-  { id: 22, name: 'Azure', category: 'Tools & DevOps', level: 82, sort_order: 22 },
-  { id: 23, name: 'Kubernetes', category: 'Tools & DevOps', level: 80, sort_order: 23 },
-  { id: 24, name: 'Docker', category: 'Tools & DevOps', level: 85, sort_order: 24 },
-  { id: 25, name: 'Git & GitHub', category: 'Tools & DevOps', level: 94, sort_order: 25 },
-  { id: 26, name: 'Google Tag Manager', category: 'Tools & DevOps', level: 88, sort_order: 26 },
-  { id: 27, name: 'CI/CD & Vercel', category: 'Tools & DevOps', level: 90, sort_order: 27 },
-  { id: 28, name: 'Postman', category: 'Tools & DevOps', level: 92, sort_order: 28 },
-  { id: 29, name: 'Figma', category: 'Tools & DevOps', level: 85, sort_order: 29 },
-  { id: 30, name: 'Linux / Bash', category: 'Tools & DevOps', level: 84, sort_order: 30 },
+  { id: 21, name: 'AWS', category: 'Tools & DevOps', level: 85, sort_order: 23 },
+  { id: 22, name: 'Azure', category: 'Tools & DevOps', level: 82, sort_order: 24 },
+  { id: 23, name: 'Kubernetes', category: 'Tools & DevOps', level: 80, sort_order: 25 },
+  { id: 24, name: 'Docker', category: 'Tools & DevOps', level: 85, sort_order: 26 },
+  { id: 25, name: 'Git & GitHub', category: 'Tools & DevOps', level: 94, sort_order: 27 },
+  { id: 26, name: 'Google Tag Manager', category: 'Tools & DevOps', level: 88, sort_order: 28 },
+  { id: 27, name: 'CI/CD & Vercel', category: 'Tools & DevOps', level: 90, sort_order: 29 },
+  { id: 28, name: 'Postman', category: 'Tools & DevOps', level: 92, sort_order: 30 },
+  { id: 29, name: 'Figma', category: 'Tools & DevOps', level: 85, sort_order: 31 },
+  { id: 30, name: 'Linux / Bash', category: 'Tools & DevOps', level: 84, sort_order: 32 },
+  { id: 33, name: 'OWASP Top 10', category: 'Tools & DevOps', level: 92, sort_order: 33 },
+  { id: 34, name: 'Penetration Testing', category: 'Tools & DevOps', level: 88, sort_order: 34 },
 ];
 
 export const PROJECTS: Project[] = [
   // Top Selected Projects (Featured)
   {
     id: 1,
+    title: 'Black-Box Web Security Testing Platform',
+    tagline: 'Dynamic Application Security Testing (DAST) Platform',
+    description:
+      'An authorized, enterprise-grade Dynamic Application Security Testing (DAST) platform designed to discover external attack surfaces, execute passive and controlled active security checks, collect cryptographic evidence, deduplicate findings using exact URLs, score risk, and generate actionable reports.',
+    category: 'Full Stack',
+    tech: ['TypeScript', 'Node.js', 'React', 'DAST Engine', 'OWASP Top 10', 'Risk Scoring', 'Cryptography', 'Tailwind CSS'],
+    demo_url: null,
+    github_url: null,
+    year: '2025',
+    featured: true,
+    sort_order: 1,
+  },
+  {
+    id: 2,
     title: 'AI-Powered Resume Generator',
     tagline: 'Intelligent resume builder & ATS optimizer',
     description:
@@ -61,24 +79,24 @@ export const PROJECTS: Project[] = [
     github_url: 'https://github.com/YounasKhan2/ai-powered-resume-generator',
     year: '2025',
     featured: true,
-    sort_order: 1,
+    sort_order: 2,
   },
   {
-    id: 2,
+    id: 3,
     title: 'Meridian',
-    tagline: 'Modern scalable web platform',
+    tagline: 'Smart expense tracker & personal finance platform',
     description:
-      'A feature-rich application designed with clean modular architecture, intuitive navigation, real-time data handling, and responsive cross-platform performance.',
+      'A full-stack expense tracking and personal finance platform designed with real-time budget management, interactive spending analytics, clean modular architecture, and responsive cross-platform performance.',
     category: 'Full Stack',
     tech: ['React', 'TypeScript', 'Node.js', 'PostgreSQL', 'Tailwind CSS', 'PWA'],
     demo_url: 'https://meridian-wheat-phi.vercel.app/',
     github_url: 'https://github.com/YounasKhan2/meridian',
     year: '2025',
     featured: true,
-    sort_order: 2,
+    sort_order: 3,
   },
   {
-    id: 3,
+    id: 4,
     title: 'OTA Platform',
     tagline: 'Online travel agency booking & management system',
     description:
@@ -89,12 +107,12 @@ export const PROJECTS: Project[] = [
     github_url: 'https://github.com/YounasKhan2/OTA-Platform',
     year: '2024',
     featured: true,
-    sort_order: 3,
+    sort_order: 4,
   },
 
   // Other GitHub Projects (No Live Preview)
   {
-    id: 4,
+    id: 5,
     title: 'E-Commerce Admin Panel',
     tagline: 'Store management, inventory & analytics dashboard',
     description:
@@ -105,10 +123,10 @@ export const PROJECTS: Project[] = [
     github_url: 'https://github.com/YounasKhan2/E-Commerce-Admin-Panel',
     year: '2024',
     featured: false,
-    sort_order: 4,
+    sort_order: 5,
   },
   {
-    id: 5,
+    id: 6,
     title: 'RedTeam Security',
     tagline: 'Offensive security tools & vulnerability assessment',
     description:
@@ -119,10 +137,10 @@ export const PROJECTS: Project[] = [
     github_url: 'https://github.com/YounasKhan2/redteam-security',
     year: '2024',
     featured: false,
-    sort_order: 5,
+    sort_order: 6,
   },
   {
-    id: 6,
+    id: 7,
     title: 'BlogsWorld',
     tagline: 'Interactive blogging & content publishing platform',
     description:
@@ -133,7 +151,7 @@ export const PROJECTS: Project[] = [
     github_url: 'https://github.com/YounasKhan2/BlogsWorld',
     year: '2023',
     featured: false,
-    sort_order: 6,
+    sort_order: 7,
   },
 ];
 

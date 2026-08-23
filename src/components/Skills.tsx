@@ -60,6 +60,10 @@ const LOGOS: Record<string, LogoConfig> = {
   Postman: { slug: 'postman', color: 'FF6C37' },
   Figma: { slug: 'figma', color: 'F24E1E' },
   'Linux / Bash': { slug: 'gnubash', color: '4EAA25' },
+  'DAST & Web Security': { slug: 'kalilinux', color: '557C94' },
+  'Cryptography & Hashing': { slug: 'openssl', light: '721412', dark: 'FFFFFF' },
+  'OWASP Top 10': { slug: 'owasp', light: '000000', dark: 'FFFFFF' },
+  'Penetration Testing': { slug: 'wireshark', color: '1679A7' },
 };
 
 function initials(name: string) {
@@ -100,9 +104,8 @@ function SkillTile({ skill, index, isDark }: { skill: Skill; index: number; isDa
           alt={`${skill.name} logo`}
           loading="lazy"
           onError={() => setFailed(true)}
-          className={`h-7 w-7 shrink-0 transition-transform duration-300 group-hover:scale-110 ${
-            logo?.url && skill.name === 'AWS' && isDark ? 'brightness-0 invert' : ''
-          }`}
+          className={`h-7 w-7 shrink-0 transition-transform duration-300 group-hover:scale-110 ${logo?.url && skill.name === 'AWS' && isDark ? 'brightness-0 invert' : ''
+            }`}
         />
       ) : (
         <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg border border-line bg-surface font-display text-xs font-bold text-accent">
