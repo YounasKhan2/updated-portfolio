@@ -34,6 +34,8 @@ const LOGOS: Record<string, LogoConfig> = {
   // Backend & Core Languages
   'Node.js': { slug: 'nodedotjs', color: '5FA04E' },
   'Express.js': { slug: 'express', light: '000000', dark: 'FFFFFF' },
+  Python: { slug: 'python', color: '3776AB' },
+  'RAG & Vector Search': { slug: 'langchain', color: '1C3C3C', light: '1C3C3C', dark: '38BDF8' },
   Laravel: { slug: 'laravel', color: 'FF2D20' },
   'C++': { slug: 'cplusplus', color: '00599C' },
   Java: { url: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg' },

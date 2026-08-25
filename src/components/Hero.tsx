@@ -134,12 +134,12 @@ export default function Hero() {
       ))}
 
       {/* ————— centered content ————— */}
-      <div className="relative z-10 mx-auto max-w-5xl px-6 text-center">
+      <div className="relative z-10 mx-auto max-w-6xl px-6 text-center w-full flex flex-col items-center justify-center">
         <motion.div
           variants={wrap}
           initial="hidden"
           animate="show"
-          className="flex flex-col items-center"
+          className="flex flex-col items-center justify-center w-full"
         >
           <motion.div variants={item} className="mb-8 flex flex-wrap items-center justify-center gap-3">
             <div className="inline-flex items-center gap-2.5 rounded-full border border-line bg-panel px-4 py-1.5 font-mono text-xs text-mist">
@@ -157,12 +157,12 @@ export default function Hero() {
 
           <motion.h1
             variants={item}
-            className="font-display font-extrabold leading-[0.93] tracking-tight max-w-full"
+            className="w-full text-center font-display font-extrabold leading-[0.93] tracking-tight flex flex-col items-center justify-center"
           >
-            <span className="block text-[clamp(2.4rem,9.5vw,8.2rem)] text-white">
+            <span className="block w-full text-center text-[clamp(2rem,7.5vw,7.2rem)] text-white">
               MUHAMMAD
             </span>
-            <span className="text-outline-hover block text-[clamp(2.4rem,9.5vw,8.2rem)]">
+            <span className="text-outline-hover block w-full text-center text-[clamp(2rem,7.5vw,7.2rem)]">
               YOUNAS
             </span>
           </motion.h1>
