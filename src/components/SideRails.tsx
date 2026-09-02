@@ -3,7 +3,7 @@ import { Github, Linkedin, Mail } from 'lucide-react';
 
 const SOCIALS = [
   { icon: Github, href: 'https://github.com/YounasKhan2', label: 'GitHub' },
-  { icon: Linkedin, href: 'https://linkedin.com/in/muhammadyounas', label: 'LinkedIn' },
+  { icon: Linkedin, href: 'https://www.linkedin.com/in/muhammad-younas-65b123241', label: 'LinkedIn' },
   { icon: Mail, href: 'mailto:younaskk120@gmail.com', label: 'Email' },
 ];
 
